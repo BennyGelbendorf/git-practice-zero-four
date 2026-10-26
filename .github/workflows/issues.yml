@@ -1,10 +1,8 @@
 name: Output issue
-on: 
-    issues:
-        types: opened
+on: issues
 jobs:
-    info:
+    output-info:
         runs-on: ubuntu-latest
         steps:
             - name: Output Github context
-              run: echo "${{ toJSON(github) }}"
+              run: echo "${{ toJSON(github.event) }}"
